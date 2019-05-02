@@ -16,7 +16,7 @@ class ED006{
         people.addLast(nomes_parts[j]);
       }
       while(people.size() > 1){
-        for(int k = 0; k < frase_parts.length; k++){
+        for(int k = 1; k < frase_parts.length; k++){
           people.rotate();
         }
         people.removeFirst();
