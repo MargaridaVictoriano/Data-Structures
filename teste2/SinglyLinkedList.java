@@ -75,7 +75,7 @@ public class SinglyLinkedList<T> {
       }
       size--;
    }
-   /*//ED188
+   //ED188
    public T get(int pos){
      Node<T> curr = first;
      if(pos < 0 || pos >= size){
@@ -85,9 +85,9 @@ public class SinglyLinkedList<T> {
       curr = curr.getNext();
     }
     return curr.getValue();
-  }*/
+  }
   //ED189
-  /*
+
   public T remove(int pos){
     Node<T> curr = first;
     if(pos < 0 || pos >= size){
@@ -104,8 +104,9 @@ public class SinglyLinkedList<T> {
       removeLast();
       return removedValue;
 
-  }*/
+  }
   //ED190
+
   public SinglyLinkedList<T> copy(){
     SinglyLinkedList<T> copylist = new SinglyLinkedList<T>();
     Node<T> curr = first;
@@ -120,7 +121,41 @@ public class SinglyLinkedList<T> {
     return copylist;
 
   }
+  //ED191
 
+  public void duplicate(){
+    Node<T> curr = first;
+    while(curr != null){
+      curr.setNext(new Node<T>(curr.getValue(), curr.getNext()));
+      //o atual tem de saltar duas posiçoes para nao se repetir
+      curr = curr.getNext().getNext();
+    }
+    size *= 2;
+  }
+  //ED192
+  public int count(T value){
+    int counter = 0;
+    Node<T> curr = first;
+    while(curr != null){
+      if(curr.getValue().equals(value)){
+        counter++;
+      }
+      curr = curr.getNext();
+    }
+    return counter;
+  }
+  public void removeAll(T value){
+    int i = 0;
+    while(get(i) != null){
+      if(get(i).equals(value)){
+        remove(i);
+      }
+      else{
+        i++;
+      }
+    }
+
+  }
    // Converte a lista para uma String
    public String toString() {
       String str = "{";
