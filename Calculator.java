@@ -3,7 +3,7 @@ public class Calculator {
   //segments to draw the numbers
   static void Segments(char[][] Matrix, char x, int y) {
     boolean seg0=false, seg1=false, seg2=false, seg3=false, seg4=false, seg5=false, seg6=false;
-    char ch ='*';
+    char ch ='#';
     if(x=='0'){
       seg0=true;
       seg1=true;
@@ -107,7 +107,7 @@ public class Calculator {
   static void dot(char[][] Matrix,int Lines,int Columns){
      for(int l=0; l<Lines; l++) {
        for(int c=0; c<Columns; c++) {
-         Matrix[l][c]=' '; 
+         Matrix[l][c]='.'; 
        }
      }
    }
